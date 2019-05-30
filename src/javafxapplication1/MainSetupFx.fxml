@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400" prefWidth="550" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.MainSetupCtrl" >
+    <children>
+        <Label layoutX="20" layoutY="20" minHeight="16" minWidth="69" text="Игрок 1: Локальный игрок" />
+        <Label layoutX="20" layoutY="50" minHeight="16" minWidth="69" text="Игрок 2:" />
+        <ChoiceBox layoutX="70" layoutY="45" minHeight="16" minWidth="69" fx:id="gametype" />
+
+        <Label layoutX="5" layoutY="80" minHeight="16" minWidth="69" text="Выигрышное кол-во элементов:" />
+        <Label layoutX="190" layoutY="80" minHeight="16" minWidth="40" text="${winsl.value}" fx:id="labll" />
+        <Slider layoutX="220" layoutY="80" minHeight="16" minWidth="69" min="3" max="10" value="5.0" fx:id="winsl"
+                blockIncrement="1.0" cache="true"
+                majorTickUnit="1.0"
+                minorTickCount="0"
+                showTickLabels="true"
+                showTickMarks="true"
+                snapToTicks="true"
+        />
+
+        <Label layoutX="5" layoutY="110" minHeight="16" minWidth="69" text="Размер поля:" />
+        <Label layoutX="100" layoutY="110" minHeight="16" minWidth="40" text="${fieldsl.value}" fx:id="labfl" />
+        <Slider layoutX="220" layoutY="110" minHeight="16" minWidth="69" min="3" max="50" value="15" fx:id="fieldsl"
+                blockIncrement="1.0" cache="true"
+                majorTickUnit="1.0"
+                minorTickCount="0"
+                showTickLabels="true"
+                showTickMarks="false"
+                snapToTicks="true"
+        />
+
+        <CheckBox layoutX="5" layoutY="150" minHeight="16" minWidth="69" text="Ходит первый игрок" fx:id="chTurn1" />
+        <CheckBox layoutX="180" layoutY="150" minHeight="16" minWidth="69" text="Бесконечное поле" fx:id="chUnlim" />
+
+        <GridPane layoutX="20" layoutY="170" minWidth="170" fx:id="netPane" minHeight="48" >
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0"
+            GridPane.columnSpan="2" GridPane.rowSpan="3" />
+
+
+        </GridPane>
+
+        <Label text="Выбор пользовательского изображения:" layoutX="20" layoutY="230" />
+        <GridPane layoutX="20" layoutY="250" minWidth="175" fx:id="imgPane" minHeight="36" alignment="center" hgap="10" vgap="10">
+            <Label text="X: " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtImgX" minWidth="125" GridPane.columnIndex="1" GridPane.rowIndex="0"  />
+            <Button text="..." onAction="#xImgBtn" GridPane.columnIndex="2" GridPane.rowIndex="0"  />
+            <Label text="O: " GridPane.columnIndex="0" GridPane.rowIndex="1"  />
+            <TextField fx:id="txtImgO" minWidth="125" GridPane.columnIndex="1" GridPane.rowIndex="1"  />
+            <Button text="..." onAction="#yImgBtn" GridPane.columnIndex="2" GridPane.rowIndex="1"  />
+        </GridPane>
+
+        <ChoiceBox layoutX="220" layoutY="45" minHeight="16" minWidth="69" fx:id="botChoice" />
+    </children>
+
+    <children>
+        <Button layoutX="30" layoutY="370" text="Начать игру" onAction="#startBtn" fx:id="button" />
+    </children>
+    
+</AnchorPane>
